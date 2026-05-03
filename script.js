@@ -1,6 +1,21 @@
 "use strict";
 
 ///////////////////////////////////////
+const header = document.querySelector("header");
+const message = document.createElement("div");
+message.classList.add("cookie-message");
+
+message.innerHTML =
+  'We use cookie for improved functionality and analytics. <button class="btn btn--close--cookie">Got it!</button>';
+
+header.append(message);
+
+document
+  .querySelector(".btn--close--cookie")
+  .addEventListener("click", function () {
+    message.remove();
+  });
+///////////////////////////////////////
 // Modal window
 
 const modal = document.querySelector(".modal");
