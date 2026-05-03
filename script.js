@@ -15,6 +15,28 @@ document
   .addEventListener("click", function () {
     message.remove();
   });
+
+message.style.backgroundColor = "#37383d";
+message.style.width = "120%";
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+///////////////////////////////////////
+//scrooling
+
+const section1 = document.querySelector("#section--1");
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+
+btnScrollTo.addEventListener("click", function (e) {
+  const s1coords = section1.getBoundingClientRect();
+
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: "smooth",
+  });
+});
+
 ///////////////////////////////////////
 // Modal window
 
