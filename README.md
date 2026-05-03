@@ -3,9 +3,7 @@
 A modern, interactive landing page built with **Vanilla JavaScript, HTML, and CSS**.  
 Focuses on advanced **DOM manipulation** and smooth user experience.
 
-## 🔗 Live Demo
-
-(Add your link here)
+## [🔗 Live Demo](https://linschmitz.github.io/Bankist-UI/)
 
 ## 🚀 Features
 
