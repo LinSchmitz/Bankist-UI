@@ -5,6 +5,8 @@ Focuses on advanced **DOM manipulation** and smooth user experience.
 
 ## [🔗 Live Demo](https://linschmitz.github.io/Bankist-UI/)
 
+<a href="https://linschmitz.github.io/Bankist-UI/" target="_blank">🔗 Live Demo</a>
+
 ## 🚀 Features
 
 - 📌 Modal window (open/close with overlay & ESC)
