@@ -1,43 +1,6 @@
 "use strict";
 
 ///////////////////////////////////////
-const header = document.querySelector("header");
-const message = document.createElement("div");
-message.classList.add("cookie-message");
-
-message.innerHTML =
-  'We use cookie for improved functionality and analytics. <button class="btn btn--close--cookie">Got it!</button>';
-
-header.append(message);
-
-document
-  .querySelector(".btn--close--cookie")
-  .addEventListener("click", function () {
-    message.remove();
-  });
-
-message.style.backgroundColor = "#37383d";
-message.style.width = "120%";
-
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
-///////////////////////////////////////
-//scrooling
-
-const section1 = document.querySelector("#section--1");
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-
-btnScrollTo.addEventListener("click", function (e) {
-  const s1coords = section1.getBoundingClientRect();
-
-  window.scrollTo({
-    left: s1coords.left + window.pageXOffset,
-    top: s1coords.top + window.pageYOffset,
-    behavior: "smooth",
-  });
-});
-
-///////////////////////////////////////
 // Modal window
 
 const modal = document.querySelector(".modal");
@@ -66,3 +29,50 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+///////////////////////////////////////
+// Cookie
+
+const header = document.querySelector("header");
+const message = document.createElement("div");
+
+message.classList.add("cookie-message");
+
+message.innerHTML =
+  'We use cookie for improved functionality and analytics. <button class="btn btn--close--cookie">Got it!</button>';
+
+header.append(message);
+
+document
+  .querySelector(".btn--close--cookie")
+  .addEventListener("click", function () {
+    message.remove();
+  });
+
+message.style.backgroundColor = "#37383d";
+message.style.width = "120%";
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+///////////////////////////////////////
+// Scrooling
+
+const section1 = document.querySelector("#section--1");
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+
+btnScrollTo.addEventListener("click", function (e) {
+  section1.scrollIntoView({ behavior: "smooth" });
+});
+
+///////////////////////////////////////
+// Alert
+
+const h1 = document.querySelector("h1");
+
+const alertH1 = function () {
+  alert("addEventListener: Greate! you are reading the heading :D");
+};
+
+h1.addEventListener("mouseenter", alertH1);
+
+setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
