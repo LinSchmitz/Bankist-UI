@@ -45,35 +45,41 @@ btnScrollTo.addEventListener("click", function (e) {
 ///////////////////////////////////////
 // Page Navigation
 
+document.querySelectorAll(".nav__link").forEach(function (el) {
+  el.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+});
+
 ///////////////////////////////////////
 // Cookie
 
-message.classList.add("cookie-message");
+// message.classList.add("cookie-message");
 
-message.innerHTML =
-  'We use cookie for improved functionality and analytics. <button class="btn btn--close--cookie">Got it!</button>';
+// message.innerHTML =
+//   'We use cookie for improved functionality and analytics. <button class="btn btn--close--cookie">Got it!</button>';
 
-header.append(message);
+// header.append(message);
 
-document
-  .querySelector(".btn--close--cookie")
-  .addEventListener("click", function () {
-    message.remove();
-  });
+// document
+//   .querySelector(".btn--close--cookie")
+//   .addEventListener("click", function () {
+//     message.remove();
+//   });
 
-message.style.backgroundColor = "#37383d";
-message.style.width = "120%";
+// message.style.backgroundColor = "#37383d";
+// message.style.width = "120%";
 
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
 
 ///////////////////////////////////////
 // Alert
 
-const alertH1 = function () {
-  alert("addEventListener: Greate! you are reading the heading :D");
-};
+// const alertH1 = function () {
+//   alert("addEventListener: Greate! you are reading the heading :D");
+// };
 
-h1.addEventListener("mouseenter", alertH1);
+// h1.addEventListener("mouseenter", alertH1);
 
-setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
+// setTimeout(() => h1.removeEventListener("mouseenter", alertH1), 3000);
