@@ -1,12 +1,17 @@
 "use strict";
 
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const h1 = document.querySelector("h1");
+const header = document.querySelector("header");
+const message = document.createElement("div");
+const section1 = document.querySelector("#section--1");
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+
+///////////////////////////////////////
+// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -31,10 +36,17 @@ document.addEventListener("keydown", function (e) {
 });
 
 ///////////////////////////////////////
-// Cookie
+// Scrooling
 
-const header = document.querySelector("header");
-const message = document.createElement("div");
+btnScrollTo.addEventListener("click", function (e) {
+  section1.scrollIntoView({ behavior: "smooth" });
+});
+
+///////////////////////////////////////
+// Page Navigation
+
+///////////////////////////////////////
+// Cookie
 
 message.classList.add("cookie-message");
 
@@ -54,20 +66,9 @@ message.style.width = "120%";
 
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
-///////////////////////////////////////
-// Scrooling
-
-const section1 = document.querySelector("#section--1");
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-
-btnScrollTo.addEventListener("click", function (e) {
-  section1.scrollIntoView({ behavior: "smooth" });
-});
 
 ///////////////////////////////////////
 // Alert
-
-const h1 = document.querySelector("h1");
 
 const alertH1 = function () {
   alert("addEventListener: Greate! you are reading the heading :D");
