@@ -57,32 +57,21 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 
 ///////////////////////////////////////
 // hover on menu
-
-document.querySelector(".nav").addEventListener("mouseover", function (e) {
+const handleHover = function (e) {
   if (e.target.classList.contains("nav__link")) {
     const link = e.target;
     const siblings = link.closest(".nav").querySelectorAll(".nav__link");
     const logo = link.closest(".nav").querySelector("img");
 
     siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = 0.5;
+      if (el !== link) el.style.opacity = this;
     });
-    logo.style.opacity = 0.5;
+    logo.style.opacity = this;
   }
-});
+};
 
-document.querySelector(".nav").addEventListener("mouseout", function (e) {
-  if (e.target.classList.contains("nav__link")) {
-    const link = document.querySelector(".nav__link");
-    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
-    const logo = link.closest(".nav").querySelector("img");
-
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = 1;
-    });
-    logo.style.opacity = 1;
-  }
-});
+addEventListener("mouseover", handleHover.bind(0.5));
+addEventListener("mouseout", handleHover.bind(1));
 
 ///////////////////////////////////////
 // Tabbed Component
