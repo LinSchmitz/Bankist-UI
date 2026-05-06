@@ -56,7 +56,7 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 
 ///////////////////////////////////////
-// hover on menu
+// menu fade animation
 const handleHover = function (e) {
   if (e.target.classList.contains("nav__link")) {
     const link = e.target;
@@ -66,7 +66,7 @@ const handleHover = function (e) {
     siblings.forEach((el) => {
       if (el !== link) el.style.opacity = this;
     });
-    logo.style.opacity = this;
+    logo.style.opacity = this; // this=0.5 or 1 is opacity passed from handleHover.bind(0.5)
   }
 };
 
