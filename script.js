@@ -56,6 +56,35 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
 });
 
 ///////////////////////////////////////
+// hover on menu
+
+document.querySelector(".nav").addEventListener("mouseover", function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = 0.5;
+    });
+    logo.style.opacity = 0.5;
+  }
+});
+
+document.querySelector(".nav").addEventListener("mouseout", function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const link = document.querySelector(".nav__link");
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = 1;
+    });
+    logo.style.opacity = 1;
+  }
+});
+
+///////////////////////////////////////
 // Tabbed Component
 
 const tabs = document.querySelectorAll(".operations__tab");
