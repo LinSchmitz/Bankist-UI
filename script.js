@@ -139,6 +139,26 @@ allSections.forEach(function (section) {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
+
+///////////////////////////////////////
+// Lazy loading images
+
+const imgTargets = document.querySelectorAll("img[data-src]");
+const loadImg = function (entries, observer) {
+  const [entry] = entries;
+  data - src;
+
+  if (!entry.isIntersecting) return;
+
+  // Replace src with
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+});
+
+imgTargets.forEach((img) => imgObserver.observe(img));
 ///////////////////////////////////////
 // Cookie
 
