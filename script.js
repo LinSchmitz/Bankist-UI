@@ -5,11 +5,11 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
 const h1 = document.querySelector("h1");
-const header = document.querySelector("header");
+const header = document.querySelector(".header");
+const nav = document.querySelector(".nav");
 const message = document.createElement("div");
 const section1 = document.querySelector("#section--1");
 const btnScrollTo = document.querySelector(".btn--scroll-to");
-const header = document.querySelector(".header");
 const tabs = document.querySelectorAll(".operations__tab");
 const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
@@ -105,7 +105,7 @@ tabsContainer.addEventListener("click", function (e) {
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  navigation.classList.add("sticky");
+  nav.classList.add("sticky");
 };
 
 const obsOptions = {
