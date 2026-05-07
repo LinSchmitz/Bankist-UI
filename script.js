@@ -102,6 +102,7 @@ tabsContainer.addEventListener("click", function (e) {
 
 ///////////////////////////////////////
 // intersection observer API
+const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const [entry] = entries;
@@ -113,6 +114,7 @@ const stickyNav = function (entries) {
 const obsOptions = {
   root: null,
   threshold: 0,
+  rootMargin: `-${navHeight}px`,
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, obsOptions);
