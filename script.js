@@ -168,8 +168,27 @@ imgTargets.forEach((img) => imgObserver.observe(img));
 ///////////////////////////////////////
 // Slider
 const slides = document.querySelectorAll(".slide");
+// const slider = document.querySelector(".slider");
+const btnRight = document.querySelector(".slider__btn--right");
+const btnLeft = document.querySelector(".slider__btn--left");
+
+let curSlide = 0;
+const maxSlide = slides.length;
 
 slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+
+//Next slide
+btnRight.addEventListener("click", function () {
+  if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`),
+  );
+});
 
 ///////////////////////////////////////
 // Cookie
