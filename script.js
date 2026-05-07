@@ -184,7 +184,7 @@ const goToSlide = function (slide) {
 goToSlide(0);
 
 //Next slide
-btnRight.addEventListener("click", function () {
+const nextSlide = function () {
   if (curSlide === maxSlide - 1) {
     curSlide = 0;
   } else {
@@ -192,7 +192,19 @@ btnRight.addEventListener("click", function () {
   }
 
   goToSlide(curSlide);
-});
+};
+
+const prevSlide = function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
+  }
+  goToSlide(curSlide);
+};
+
+btnRight.addEventListener("click", nextSlide);
+btnLeft.addEventListener("click", prevSlide);
 
 ///////////////////////////////////////
 // Cookie
