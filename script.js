@@ -175,7 +175,13 @@ const btnLeft = document.querySelector(".slider__btn--left");
 let curSlide = 0;
 const maxSlide = slides.length;
 
-slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+const goToSlide = function (slide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`),
+  );
+};
+
+goToSlide(0);
 
 //Next slide
 btnRight.addEventListener("click", function () {
@@ -185,9 +191,7 @@ btnRight.addEventListener("click", function () {
     curSlide++;
   }
 
-  slides.forEach(
-    (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`),
-  );
+  goToSlide(curSlide);
 });
 
 ///////////////////////////////////////
