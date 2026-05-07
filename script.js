@@ -105,7 +105,9 @@ tabsContainer.addEventListener("click", function (e) {
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  nav.classList.add("sticky");
+
+  if (!entry.isIntersecting) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
 };
 
 const obsOptions = {
