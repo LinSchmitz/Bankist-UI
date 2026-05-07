@@ -9,6 +9,10 @@ const header = document.querySelector("header");
 const message = document.createElement("div");
 const section1 = document.querySelector("#section--1");
 const btnScrollTo = document.querySelector(".btn--scroll-to");
+const header = document.querySelector(".header");
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
 
 ///////////////////////////////////////
 // Modal window
@@ -76,10 +80,6 @@ addEventListener("mouseout", handleHover.bind(1));
 ///////////////////////////////////////
 // Tabbed Component
 
-const tabs = document.querySelectorAll(".operations__tab");
-const tabsContainer = document.querySelector(".operations__tab-container");
-const tabsContent = document.querySelectorAll(".operations__content");
-
 tabsContainer.addEventListener("click", function (e) {
   const clicked = e.target.closest(".operations__tab");
   console.log(clicked);
@@ -99,6 +99,22 @@ tabsContainer.addEventListener("click", function (e) {
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add("operations__content--active");
 });
+
+///////////////////////////////////////
+// intersection observer API
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  navigation.classList.add("sticky");
+};
+
+const obsOptions = {
+  root: null,
+  threshold: 0,
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, obsOptions);
+headerObserver.observe(header);
 
 ///////////////////////////////////////
 // Cookie
