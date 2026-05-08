@@ -195,6 +195,7 @@ const nextSlide = function () {
 };
 
 const prevSlide = function () {
+  console.log("prevSlide");
   if (curSlide === 0) {
     curSlide = maxSlide - 1;
   } else {
@@ -205,6 +206,13 @@ const prevSlide = function () {
 
 btnRight.addEventListener("click", nextSlide);
 btnLeft.addEventListener("click", prevSlide);
+
+//Arrow keys
+document.addEventListener("keydown", function (e) {
+  console.log(e);
+  if (e.key === "ArrowLeft") prevSlide();
+  e.key === "ArrowRight" && nextSlide();
+});
 
 ///////////////////////////////////////
 // Cookie
